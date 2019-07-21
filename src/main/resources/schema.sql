@@ -20,3 +20,11 @@ create table contact(
   email varchar(100) not null,
   message varchar(100) not null
 );
+
+
+create table VisitorDetails(
+   ip varchar(200) not null,
+   city varchar(100) not null,
+   latitude varchar(100) not null,
+   longitude varchar(100) not null
+);

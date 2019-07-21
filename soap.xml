@@ -1,0 +1,21 @@
+POST /perl/soaplite.cgi HTTP/1.0
+Host: services.xmethods.com
+Content-Type: text/xml; charset = utf-8
+Content-Length: 538
+SOAPAction: "urn:xmethodsBabelFish#BabelFish"  // This is mandatory , if no soap action is defined use empty soap action like -> soap:
+
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SOAP-ENV:Envelope 
+   xmlns:SOAP-ENV = "http://schemas.xmlsoap.org/soap/envelope/" 
+   xmlns:xsi = "http://www.w3.org/1999/XMLSchema-instance"
+   xmlns:xsd = "http://www.w3.org/1999/XMLSchema">
+
+   <SOAP-ENV:Body>
+      <ns1:BabelFish
+         xmlns:ns1 = "urn:xmethodsBabelFish"
+         SOAP-ENV:encodingStyle = "http://schemas.xmlsoap.org/soap/encoding/">
+         <translationmode xsi:type = "xsd:string">en_fr</translationmode>
+         <sourcedata xsi:type = "xsd:string">Hello, world!</sourcedata>
+      </ns1:BabelFish>
+   </SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

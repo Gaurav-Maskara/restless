@@ -41,6 +41,26 @@
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+   
+    <script>
+    window.onload=getVisitorDetails;
+    
+    function getVisitorDetails() {
+    	 $.get("https://ipapi.co/json", function(data, status){
+    	      var visitorDataData = { ip:data.ip, city:data.city, latitude:data.latitude, longitude:data.longitude};
+    	      
+    	      $.ajax({
+  		        type: 'POST',
+  		        url: "/postgressApp/addVisitorDetails",
+  		        data: visitorDataData,
+  		        dataType: "text"
+  		  });
+    	      
+    	 });	  
+    }  
+    </script>
+
 	</head>
 	<body>
 
@@ -72,7 +92,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-xs-2">
-						<div id="fh5co-logo"><a href="index.html">REST<i><small>less</small></i><span>.</span></a></div>
+						<div id="fh5co-logo"><a href="/">REST<i><small>less</small></i><span>.</span></a></div>
 					</div>
 					<div class="col-xs-10 text-right menu-1">
 						<ul>

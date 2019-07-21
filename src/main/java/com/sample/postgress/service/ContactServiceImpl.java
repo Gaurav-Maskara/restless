@@ -12,6 +12,7 @@ import com.sample.postgress.entity.Contact;
 public class ContactServiceImpl implements ContactService{
 	@Resource 
 	ContactDao ContactDao;
+	
 	@Override
 	public List<Contact> findAll() {
 		return ContactDao.findAll();

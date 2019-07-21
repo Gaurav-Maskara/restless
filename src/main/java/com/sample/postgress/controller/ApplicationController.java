@@ -24,10 +24,13 @@ import com.consumer.beans.Quote;
 import com.sample.postgress.entity.Contact;
 import com.sample.postgress.entity.Employee;
 import com.sample.postgress.entity.User;
+import com.sample.postgress.entity.VisitorDetails;
 import com.sample.postgress.service.ContactService;
 import com.sample.postgress.service.EmployeeService;
 import com.sample.postgress.service.UserService;
+import com.sample.postgress.service.VisitorDetailsService;
 
+//https://ipapi.co/json/
 @RestController
 @RequestMapping("/postgressApp")
 public class ApplicationController {
@@ -40,6 +43,9 @@ public class ApplicationController {
 	
 	@Resource
 	ContactService contactService;
+	
+	@Resource
+	VisitorDetailsService visitorDetailsService;
 
 
 	@GetMapping(value = "/aboutSpring", produces = { "application/json" })
@@ -52,9 +58,9 @@ public class ApplicationController {
 
 	@GetMapping(value = "/tellJoke", produces = { "application/json" })
 	String getJoke() {
-		    RestTemplate restTemplate = new RestTemplate();
-	        String  quote = restTemplate.getForObject("https://api.adviceslip.com/advice", String.class);
-	        return quote;
+		   RestTemplate restTemplate = new RestTemplate();
+	       String  advice = restTemplate.getForObject("https://api.adviceslip.com/advice", String.class);
+	       return advice;
 	 }
 	
 
@@ -97,7 +103,18 @@ public class ApplicationController {
 		return "success";
 	}
 	
+	@PostMapping(value = "/addVisitorDetails")
+	public void addIPAddressOfUser(VisitorDetails visitorDetails) {
+	   System.out.println("adding visitor details into the database");	
+	   visitorDetailsService.insertVisitorDetails(visitorDetails);
+	   System.out.println("added successfully");
+	}
 	
+	@GetMapping(value = "/visitorList")
+	public List<VisitorDetails> getVisitors() {
+		return visitorDetailsService.findAll();
+
+	}
 
 	@GetMapping(value = "/employeeList")
 	public List<Employee> getEmployees() {
@@ -127,6 +144,16 @@ public class ApplicationController {
 	public void deleteEmployee(@RequestBody Employee emp) {
 		employeeService.deleteEmployee(emp);
 
+	}
+	
+	
+	public void javaLessopn() {
+		
+		
+		// for lambda expression https://www.geeksforgeeks.org/lambda-expressions-java-8/
+		// for concurrency tutorialspoint
+		
+		
 	}
 
 }

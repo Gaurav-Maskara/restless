@@ -107,7 +107,7 @@ public class ApplicationController {
 	public void addIPAddressOfUser(VisitorDetails visitorDetails) {
 	   System.out.println("adding visitor details into the database");	
 	   
-	   if("106.202.71.154".equals(visitorDetails.getIp())||"42.111.31.236".equals(visitorDetails.getIp())) {
+	   if("106.202.71.154".equals(visitorDetails.getIp())||"42.111.31.236".equals(visitorDetails.getIp())||"42.111.26.24".equals(visitorDetails.getIp())) {
 		   return;
 	   }
 	   

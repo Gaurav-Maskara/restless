@@ -1,5 +1,6 @@
 package com.sample.postgress.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -40,13 +41,12 @@ public class ApplicationController {
 
 	@Resource
 	UserService userService;
-	
+
 	@Resource
 	ContactService contactService;
-	
+
 	@Resource
 	VisitorDetailsService visitorDetailsService;
-
 
 	@GetMapping(value = "/aboutSpring", produces = { "application/json" })
 	Quote getAboutSpring() {
@@ -58,11 +58,10 @@ public class ApplicationController {
 
 	@GetMapping(value = "/tellJoke", produces = { "application/json" })
 	String getJoke() {
-		   RestTemplate restTemplate = new RestTemplate();
-	       String  advice = restTemplate.getForObject("https://api.adviceslip.com/advice", String.class);
-	       return advice;
-	 }
-	
+		RestTemplate restTemplate = new RestTemplate();
+		String advice = restTemplate.getForObject("https://api.adviceslip.com/advice", String.class);
+		return advice;
+	}
 
 	@GetMapping(value = "/userList")
 	public List<User> getUsers() {
@@ -87,38 +86,52 @@ public class ApplicationController {
 		userService.deleteUser(user);
 
 	}
-	
+
 	@GetMapping(value = "/contacts")
 	public List<Contact> getContacts() {
 		return contactService.findAll();
 
 	}
-	
+
 	@PostMapping(value = "/addContact")
 	public String addContact(Contact contact) {
-	   System.out.println("hello");	
+		System.out.println("hello");
 		contactService.insertContact(contact);
-		//return ResponseEntity.ok(new String("success"));
-		//ResponseEntity<?>
+		// return ResponseEntity.ok(new String("success"));
+		// ResponseEntity<?>
 		return "success";
 	}
-	
+
 	@PostMapping(value = "/addVisitorDetails")
 	public void addIPAddressOfUser(VisitorDetails visitorDetails) {
-	   System.out.println("adding visitor details into the database");	
-	   
-	   if("106.202.71.154".equals(visitorDetails.getIp())||"42.111.31.236".equals(visitorDetails.getIp())||"42.111.26.24".equals(visitorDetails.getIp())) {
-		   return;
-	   }
-	   
-	   visitorDetailsService.insertVisitorDetails(visitorDetails);
-	   System.out.println("added successfully");
+		System.out.println("adding visitor details into the database");
+
+		if ("106.202.71.154".equals(visitorDetails.getIp()) || "42.111.31.236".equals(visitorDetails.getIp())
+				|| "42.111.26.24".equals(visitorDetails.getIp())) {
+			return;
+		}
+
+		visitorDetailsService.insertVisitorDetails(visitorDetails);
+		System.out.println("added successfully");
 	}
-	
+
 	@GetMapping(value = "/visitorList")
 	public List<VisitorDetails> getVisitors() {
 		return visitorDetailsService.findAll();
 
+	}
+
+	@GetMapping(value = "/java", produces = { "application/json" })
+	public ArrayList<String> javaLessons() {
+		// for lambda expression
+		// https://www.geeksforgeeks.org/lambda-expressions-java-8/
+		// for concurrency tutorialspoint
+		
+		ArrayList<String> urls=new ArrayList<String>();
+		urls.add("Lambda Expressions "+"https://www.geeksforgeeks.org/lambda-expressions-java-8/");
+		urls.add("Concurrency "+"https://www.tutorialspoint.com/java_concurrency/");
+       
+		return urls;
 	}
 
 	@GetMapping(value = "/employeeList")
@@ -150,15 +163,7 @@ public class ApplicationController {
 		employeeService.deleteEmployee(emp);
 
 	}
+
 	
-	
-	public void javaLessopn() {
-		
-		
-		// for lambda expression https://www.geeksforgeeks.org/lambda-expressions-java-8/
-		// for concurrency tutorialspoint
-		
-		
-	}
 
 }

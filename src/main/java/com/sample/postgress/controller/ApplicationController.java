@@ -33,7 +33,7 @@ import com.sample.postgress.service.VisitorDetailsService;
 
 //https://ipapi.co/json/
 @RestController
-@RequestMapping("/postgressApp")
+@RequestMapping("/restless")
 public class ApplicationController {
 
 	@Resource

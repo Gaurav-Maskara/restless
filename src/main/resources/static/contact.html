@@ -28,7 +28,7 @@
 		     alert(this.responseText)
 		    }
 		  };
-		  xhttp.open("GET", "/postgressApp/tellJoke", true);
+		  xhttp.open("GET", "/restless/tellJoke", true);
 		  xhttp.send();
 	  } */
 	  
@@ -47,7 +47,7 @@
 
 		  var saveData = $.ajax({
 		        type: 'POST',
-		        url: "/postgressApp/addContact",
+		        url: "/restless/addContact",
 		        data: feedbackData,
 		        dataType: "text",
 		        success: function(response) { alert("Response recorded successfully") 

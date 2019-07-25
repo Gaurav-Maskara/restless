@@ -52,7 +52,7 @@
     	      
     	      $.ajax({
   		        type: 'POST',
-  		        url: "/postgressApp/addVisitorDetails",
+  		        url: "/restless/addVisitorDetails",
   		        data: visitorDataData,
   		        dataType: "text"
   		  });
@@ -100,18 +100,18 @@
 							<li class="has-dropdown">
 								<a href="/">Services Available</a>
 								<ul class="dropdown">
-									<li><a href="postgressApp/tellJoke"><b>GET:</b> Get Free Advice</a></li>
-									<li><a href="postgressApp/aboutSpring"><b>GET:</b> Tell something new about Spring</a></li>
-									<li><a href="postgressApp/userList"><b>GET:</b> See registered users</a></li>
-									<li><a href="postgressApp/createUser"><b>POST:</b> Resister a user</a></li>
-									<li><a href="postgressApp/updateUser"><b>PUT:</b> Update details of user</a></li>
-									<li><a href="postgressApp/deleteUserByUsername"><b>DELETE:</b> Delete a registered user</a></li>
-									<li><a href="postgressApp/contacts"><b>GET:</b> See all people who contacted</a></li>
+									<li><a href="restless/tellJoke"><b>GET:</b> Get Free Advice</a></li>
+									<li><a href="restless/aboutSpring"><b>GET:</b> Tell something new about Spring</a></li>
+									<li><a href="restless/userList"><b>GET:</b> See registered users</a></li>
+									<li><a href="restless/createUser"><b>POST:</b> Resister a user</a></li>
+									<li><a href="restless/updateUser"><b>PUT:</b> Update details of user</a></li>
+									<li><a href="restless/deleteUserByUsername"><b>DELETE:</b> Delete a registered user</a></li>
+									<li><a href="restless/contacts"><b>GET:</b> See all people who contacted</a></li>
 								</ul>
 								<li><a href="https://gauravmvc.herokuapp.com/login">My Store</a></li>
 								<li><a href="contact.html">Contact</a></li>
 							</li>
-							<!-- <li class="btn-cta"><a href="postgressApp/createUser"><span>Register</span></a></li> -->
+							<!-- <li class="btn-cta"><a href="restless/createUser"><span>Register</span></a></li> -->
 						</ul>
 					</div>
 				</div>
@@ -149,7 +149,7 @@
 							<div class="feature-copy">
 								<h3>Tell A Joke</h3>
 								<p>This is a <b>GET</b> service, <b>which consumes a third party API adds a personal touch and then serves the content to you,</b> click below link to get the url</p>
-								<p><a href="postgressApp/tellJoke">Get Joke<i class="icon-arrow-right22"></i></a></p>
+								<p><a href="restless/tellJoke">Get Joke<i class="icon-arrow-right22"></i></a></p>
 							</div>
 						</div>
 					</div>
@@ -162,7 +162,7 @@
 							<div class="feature-copy">
 								<h3>About Spring</h3>
 								<p>This is a <b>GET</b> service, <b>which consumes a third party API adds a personal touch and then serves the content to you,</b> click below link to get the url</p>
-								<p><a href="postgressApp/aboutSpring">About Spring<i class="icon-arrow-right22"></i></a></p>
+								<p><a href="restless/aboutSpring">About Spring<i class="icon-arrow-right22"></i></a></p>
 							</div>
 						</div>
 					</div>
@@ -176,7 +176,7 @@
 							<div class="feature-copy">
 								<h3>Registered Users</h3>
 								<p>This is a <b>GET</b> service, which lists down all the users registered with this website, click below link to get the url</p>
-								<p><a href="postgressApp/userList">Registered users<i class="icon-arrow-right22"></i></a></p>
+								<p><a href="restless/userList">Registered users<i class="icon-arrow-right22"></i></a></p>
 							</div>
 						</div>
 					</div>
@@ -194,7 +194,7 @@
 							<div class="feature-copy">
 								<h3>Add a user</h3>
 								<p>This is a <b>POST</b> service(use above tool to add a user),the user should conatin a unique userName, userAddress, userEmail,userPassword in JSON format </p>
-								<p><a href="postgressApp/createUser">Add a user<i class="icon-arrow-right22"></i></a></p>
+								<p><a href="restless/createUser">Add a user<i class="icon-arrow-right22"></i></a></p>
 							</div>
 						</div>
 
@@ -208,7 +208,7 @@
 							<div class="feature-copy">
 								<h3>Update a user</h3>
 								<p>This is a <b>PUT</b> service, it updates a user's details on the basis of userName if found , otherwise it creates a new user. Pass the data in JSON Format</p>
-								<p><a href="postgressApp/updateUser">PUT a user<i class="icon-arrow-right22"></i></a></p>
+								<p><a href="restless/updateUser">PUT a user<i class="icon-arrow-right22"></i></a></p>
 							</div>
 						</div>
 
@@ -221,7 +221,7 @@
 							<div class="feature-copy">
 								<h3>Delete a user</h3>
 								<p>This is a <b>DELETE</b> service which deletes a user based on its username.  Pass the data in JSON Format</p>
-								<p><a href="postgressApp/deleteUserByUsername">Delete a user <i class="icon-arrow-right22"></i></a></p>
+								<p><a href="restless/deleteUserByUsername">Delete a user <i class="icon-arrow-right22"></i></a></p>
 							</div>
 						</div>
 					</div>
@@ -239,7 +239,7 @@
 							<div class="feature-copy">
 								<h3>See all who contacted</h3>
 								<p>This is a <b>GET</b> service, which lists down all the people who contacted</p>
-								<p><a href="postgressApp/contacts">GET comments<i class="icon-arrow-right22"></i></a></p>
+								<p><a href="restless/contacts">GET comments<i class="icon-arrow-right22"></i></a></p>
 							</div>
 						</div>
 
@@ -268,7 +268,7 @@
 							<div class="feature-copy">
 								<h3>Delete a user</h3>
 								<p>This is a <b>DELETE</b> service which deletes a user based on its username.  Pass the data in JSON Format</p>
-								<p><a href="postgressApp/deleteUserByUsername">Delete a user <i class="icon-arrow-right22"></i></a></p>
+								<p><a href="restless/deleteUserByUsername">Delete a user <i class="icon-arrow-right22"></i></a></p>
 							</div>
 						</div>
 					</div> -->

@@ -128,8 +128,11 @@ public class ApplicationController {
 		// for concurrency tutorialspoint
 		
 		ArrayList<String> urls=new ArrayList<String>();
+		
 		urls.add("Lambda Expressions "+"https://www.geeksforgeeks.org/lambda-expressions-java-8/");
 		urls.add("Concurrency "+"https://www.tutorialspoint.com/java_concurrency/");
+		urls.add("https://www.tutorialspoint.com/spring");
+		urls.add("https://www.tutorialspoint.com/servlets/");
        
 		return urls;
 	}

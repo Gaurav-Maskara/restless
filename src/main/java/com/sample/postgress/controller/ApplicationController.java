@@ -3,9 +3,7 @@ package com.sample.postgress.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-
 import javax.annotation.Resource;
-
 import org.springframework.hateoas.Link;
 import org.springframework.hateoas.Resources;
 import org.springframework.http.ResponseEntity;
@@ -19,7 +17,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
 import com.consumer.beans.Joke;
 import com.consumer.beans.Quote;
 import com.sample.postgress.entity.Contact;
@@ -129,12 +126,17 @@ public class ApplicationController {
 		
 		ArrayList<String> urls=new ArrayList<String>();
 		
+		urls.add("Java "+"https://www.tutorialspoint.com/java/java_exceptions.htm");
 		urls.add("Lambda Expressions "+"https://www.geeksforgeeks.org/lambda-expressions-java-8/");
 		urls.add("Concurrency "+"https://www.tutorialspoint.com/java_concurrency/");
 		urls.add("Spring Overview "+"https://www.tutorialspoint.com/spring");
 		urls.add("Servelts Overview "+"https://www.tutorialspoint.com/servlets/");
-       
-		return urls;
+		urls.add("JSP "+"https://www.tutorialspoint.com/jsp/");
+		urls.add("Java Multithreading "+"https://www.tutorialspoint.com/java/java_multithreading");
+        urls.add("Hibernate "+"https://www.tutorialspoint.com/hibernate");
+        urls.add("SQL "+"https://www.w3schools.com/sql/");
+		
+        return urls;
 	}
 
 	@GetMapping(value = "/employeeList")

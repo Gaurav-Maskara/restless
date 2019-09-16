@@ -1,23 +1,18 @@
 package com.sample.postgress.controller;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import javax.annotation.Resource;
-import org.springframework.hateoas.Link;
-import org.springframework.hateoas.Resources;
-import org.springframework.http.ResponseEntity;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-import com.consumer.beans.Joke;
+
 import com.consumer.beans.Quote;
 import com.sample.postgress.entity.Contact;
 import com.sample.postgress.entity.Employee;
@@ -31,7 +26,7 @@ import com.sample.postgress.service.VisitorDetailsService;
 //https://ipapi.co/json/
 @RestController
 @RequestMapping("/restless")
-public class ApplicationController {
+public class ApplicationController implements Serializable {
 
 	@Resource
 	EmployeeService employeeService;
@@ -49,6 +44,7 @@ public class ApplicationController {
 	Quote getAboutSpring() {
 
 		RestTemplate restTemplate = new RestTemplate();
+		
 		Quote quote = restTemplate.getForObject("https://gturnquist-quoters.cfapps.io/api/random", Quote.class);
 		return quote;
 	}
@@ -118,26 +114,6 @@ public class ApplicationController {
 
 	}
 
-	@GetMapping(value = "/java", produces = { "application/json" })
-	public ArrayList<String> javaLessons() {
-		// for lambda expression
-		// https://www.geeksforgeeks.org/lambda-expressions-java-8/
-		// for concurrency tutorialspoint
-		
-		ArrayList<String> urls=new ArrayList<String>();
-		
-		urls.add("Java "+"https://www.tutorialspoint.com/java/java_exceptions.htm");
-		urls.add("Lambda Expressions "+"https://www.geeksforgeeks.org/lambda-expressions-java-8/");
-		urls.add("Concurrency "+"https://www.tutorialspoint.com/java_concurrency/");
-		urls.add("Spring Overview "+"https://www.tutorialspoint.com/spring");
-		urls.add("Servelts Overview "+"https://www.tutorialspoint.com/servlets/");
-		urls.add("JSP "+"https://www.tutorialspoint.com/jsp/");
-		urls.add("Java Multithreading "+"https://www.tutorialspoint.com/java/java_multithreading");
-        urls.add("Hibernate "+"https://www.tutorialspoint.com/hibernate");
-        urls.add("SQL "+"https://www.w3schools.com/sql/");
-		
-        return urls;
-	}
 
 	@GetMapping(value = "/employeeList")
 	public List<Employee> getEmployees() {
@@ -167,6 +143,85 @@ public class ApplicationController {
 	public void deleteEmployee(@RequestBody Employee emp) {
 		employeeService.deleteEmployee(emp);
 
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	@GetMapping(value = "/java", produces = { "application/json" })
+	public ArrayList<String> javaLessons() {
+		
+		ArrayList<String> urls=new ArrayList<String>();
+		
+		urls.add("Java: "+"https://www.tutorialspoint.com/java");
+		urls.add("300 Java Interview Questions: "+"https://www.javatpoint.com/corejava-interview-questions");
+		urls.add("Servelts Overview: "+"https://www.tutorialspoint.com/servlets/");
+		urls.add("JSP: "+"https://www.tutorialspoint.com/jsp/");
+		urls.add("Doubly checked singleton class: "+"https://www.journaldev.com/171/thread-safety-in-java-singleton-classes-with-example-code");
+		urls.add("Static blocks in java: "+"https://www.geeksforgeeks.org/g-fact-79/");
+        urls.add("Good Article on servlets must read: "+"https://stackoverflow.com/questions/3106452/how-do-servlets-work-instantiation-sessions-shared-variables-and-multithreadi/3106909#3106909"+"  "+"https://stackoverflow.com/questions/9555842/why-servlets-are-not-thread-safe/");
+		
+		
+		
+		urls.add("Hibernate: "+"https://www.tutorialspoint.com/hibernate");
+		
+		
+       
+	
+		
+        urls.add("SQL: "+"https://www.w3schools.com/sql/");
+        urls.add("HTML: "+"https://www.w3schools.com/html/html_examples.asp");
+        
+		
+        
+        
+        
+        
+        
+        
+        
+        
+        // Java 8
+        urls.add("Lambda Expressions: "+"https://www.geeksforgeeks.org/lambda-expressions-java-8/");
+        urls.add("Ierating usong Lambda: "+"https://beginnersbook.com/2017/01/lambda-expression-iterating-map-and-list-in-java-8/");
+        
+        
+        
+        
+        // Spring
+        urls.add("Spring Overview: "+"https://www.tutorialspoint.com/spring");
+        urls.add("Spring Interview Questions: "+"https://www.springboottutorial.com/spring-interview-questions");
+        urls.add("Difference between @Pathvariable, @RequestParam: "+"https://www.codebyamir.com/blog/spring-mvc-essentials-requestmapping-pathvariable-annotations");
+       
+        
+        // Threads in java
+        urls.add("Java Multithreading: "+"https://www.tutorialspoint.com/java/java_multithreading");
+        urls.add("Oject Level vs Class Level Locking: "+"https://java2blog.com/object-level-locking-vs-class-level-locking-java/");
+        urls.add("Concurrency: "+"https://www.tutorialspoint.com/java_concurrency/");
+    	urls.add("Inter Thread Communication in Java: "+"https://www.javatpoint.com/inter-thread-communication-example");
+        
+        
+    	// Good topics
+    	urls.add("Fail fast and Fail Safe: "+"https://www.geeksforgeeks.org/fail-fast-fail-safe-iterators-java/");
+    	urls.add("Difference between Enumeration and Iterator: "+"https://techdifferences.com/difference-between-iterator-and-enumeration-interface-in-java.html");
+    	urls.add("Internal working of hash map: "+"https://www.geeksforgeeks.org/internal-working-of-hashmap-java/");
+        
+        // Few topics to prepare
+        // cycle in a linkedlist, duplicates in linked list, removing duplicates in linked list
+        // sorting algorithms--> its not necessary to learn the algorthrims , but knowing about them would be helpful a
+        // also which algorith is better than the other and why ---atleast know the runtime of the sort
+        // Recursion
+        // Knowing how to make custom datastructure
+        // Binary search --also time complexity
+        //DFS BFS
+        //Hash Table
+        
+        
+        return urls;
 	}
 
 	

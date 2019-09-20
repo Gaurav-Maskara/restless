@@ -10,6 +10,13 @@ public class VisitorDetails {
 	public VisitorDetails() {
 		super();
 	}
+	
+	public VisitorDetails(String ip) {
+		this.ip=ip;
+		this.city="";
+		this.latitude="";
+		this.longitude="";
+	}
 
 	public VisitorDetails(String ip, String city, String latitude, String longitude) {
 		super();

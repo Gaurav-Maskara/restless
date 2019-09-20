@@ -11,3 +11,6 @@ spring.datasource.initialization-mode=always
 spring.datasource.initialize=true
 spring.datasource.schema=classpath:/schema.sql
 spring.datasource.continue-on-error=true
+
+
+spring.cloud.gcp.credentials.location=file:src/main/resources/GoogleVision/master-reactor-253413-99ce0ca6a941.json

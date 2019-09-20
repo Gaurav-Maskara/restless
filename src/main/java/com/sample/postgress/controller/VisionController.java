@@ -63,18 +63,18 @@ public class VisionController {
 	            
 	            
 			
-			/*
-			 * Resource imageResource = this.resourceLoader.getResource("file:"+path);
-			 * AnnotateImageResponse response = this.cloudVisionTemplate.analyzeImage(
-			 * imageResource, Feature.Type.DOCUMENT_TEXT_DETECTION);
-			 * 
-			 * 
-			 * 
-			 * 
-			 * 
-			 * 
-			 * return response.getFullTextAnnotation().getText();
-			 */
+			
+			  Resource imageResource = this.resourceLoader.getResource("file:"+path);
+			  AnnotateImageResponse response = this.cloudVisionTemplate.analyzeImage(
+			  imageResource, Feature.Type.DOCUMENT_TEXT_DETECTION);
+			  
+			  
+			  
+			  
+			  
+			  
+			  return response.getFullTextAnnotation().getText();
+			 
 
 	        } catch (IOException e) {
 	            e.printStackTrace();

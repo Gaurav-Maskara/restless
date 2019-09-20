@@ -61,7 +61,7 @@ public class VisionController {
 				   List<VisitorDetails> visitorDetailsList=visitorDetailsService.findAll();
 				   
 				   int count=visitorDetailsList.size();
-				   if(count>=500) {
+				   if(count>=450) {
 					   return "Google Vision Free Service has been fully utilized: Kindly upgrade your account to enjoy the service";
 				   }
 		 

@@ -10,6 +10,17 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   
   
+  <script>
+  function validate(){
+	  var x=document.getElementById("customFile").value;
+	  if(x==""){
+	     var y=document.getElementById("error").style.display="";
+	     return false;
+	  }
+	}
+     
+  </script>
+  
 </head>
 <body>
 
@@ -19,11 +30,12 @@
     <p><u>Choose any Image with Text:</u></p>
     <div class="custom-file mb-3">
       <input type="file" class="custom-file-input" id="customFile" name="filename" accept=".jpg,.JPG">
+      <div id="error" style="color:red; display:none">Please select a JPG image file</div>
       <label class="custom-file-label" for="customFile">Choose file</label>
     </div>
     
     <div class="mt-3">
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" onclick="return validate()">Submit</button>
     </div>
   </form>
 </div>

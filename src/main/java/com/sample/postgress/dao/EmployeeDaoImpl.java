@@ -33,8 +33,6 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	public void insertEmployee(Employee emp) {
 		  String sql = "insert into employee(employeeId, employeeName ,employeeEmail, employeeAddress) values(:employeeId,:employeeName,:employeeEmail,:employeeAddress)";
 		 
-		 
-		 
 	        KeyHolder holder = new GeneratedKeyHolder();
 	        SqlParameterSource param = new MapSqlParameterSource()
 					.addValue("employeeId", emp.getEmployeeId())

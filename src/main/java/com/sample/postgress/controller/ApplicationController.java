@@ -4,6 +4,8 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,7 +25,6 @@ import com.sample.postgress.service.EmployeeService;
 import com.sample.postgress.service.UserService;
 import com.sample.postgress.service.VisitorDetailsService;
 
-//https://ipapi.co/json/
 @RestController
 @RequestMapping("/restless")
 public class ApplicationController implements Serializable {
@@ -39,6 +40,7 @@ public class ApplicationController implements Serializable {
 
 	@Resource
 	VisitorDetailsService visitorDetailsService;
+	
 
 	@GetMapping(value = "/aboutSpring", produces = { "application/json" })
 	Quote getAboutSpring() {
@@ -113,6 +115,7 @@ public class ApplicationController implements Serializable {
 		return visitorDetailsService.findAll();
 
 	}
+	
 
 
 	@GetMapping(value = "/employeeList")
@@ -156,6 +159,8 @@ public class ApplicationController implements Serializable {
 	public ArrayList<String> javaLessons() {
 		
 		ArrayList<String> urls=new ArrayList<String>();
+		
+		urls.add("Topics Recall: "+"https://www.journaldev.com/7153/core-java-tutorial");
 		
 		urls.add("Java: "+"https://www.tutorialspoint.com/java");
 		urls.add("300 Java Interview Questions: "+"https://www.javatpoint.com/corejava-interview-questions");
@@ -209,7 +214,10 @@ public class ApplicationController implements Serializable {
     	urls.add("Fail fast and Fail Safe: "+"https://www.geeksforgeeks.org/fail-fast-fail-safe-iterators-java/");
     	urls.add("Difference between Enumeration and Iterator: "+"https://techdifferences.com/difference-between-iterator-and-enumeration-interface-in-java.html");
     	urls.add("Internal working of hash map: "+"https://www.geeksforgeeks.org/internal-working-of-hashmap-java/");
-        
+        urls.add("Garbage Collection in Java: "+"https://www.geeksforgeeks.org/garbage-collection-java/");
+    	urls.add("Concurrent Hash Map: "+"https://www.geeksforgeeks.org/concurrenthashmap-in-java/");
+    	
+    	
         // Few topics to prepare
         // cycle in a linkedlist, duplicates in linked list, removing duplicates in linked list
         // sorting algorithms--> its not necessary to learn the algorthrims , but knowing about them would be helpful a

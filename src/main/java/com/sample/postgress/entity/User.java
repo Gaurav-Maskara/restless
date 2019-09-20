@@ -1,7 +1,6 @@
 package com.sample.postgress.entity;
 
 public class User {
-
 	
 	private String userName;
 	private String userAddress;
@@ -51,9 +50,5 @@ public class User {
 	public void setUserPassword(String userPassword) {
 		this.userPassword = userPassword;
 	}
-	
-	
-	
-	
 	
 }

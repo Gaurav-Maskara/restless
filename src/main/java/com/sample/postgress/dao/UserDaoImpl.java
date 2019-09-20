@@ -32,8 +32,6 @@ public class UserDaoImpl implements UserDao{
 	public void insertUser(User user) {
 		  String sql = "insert into users(username, useraddress ,useremail, userpassword) values(:username,:useraddress,:useremail,:userpassword)";
 		 
-		 
-		 
 	        KeyHolder holder = new GeneratedKeyHolder();
 	        SqlParameterSource param = new MapSqlParameterSource()
 					.addValue("username", user.getUserName())
@@ -41,9 +39,7 @@ public class UserDaoImpl implements UserDao{
 					.addValue("useremail", user.getUserEmail())
 					.addValue("userpassword", user.getUserPassword());
 	        
-	        
 	        template.update(sql,param, holder);
-	 
 	}
 	
 	@Override
@@ -57,7 +53,6 @@ public class UserDaoImpl implements UserDao{
 					.addValue("useremail", user.getUserEmail())
 					.addValue("userpassword", user.getUserPassword());
 	        template.update(sql,param, holder);
-	 
 	}
 	
 	@Override
@@ -78,14 +73,12 @@ public class UserDaoImpl implements UserDao{
 			        return ps.executeUpdate();  
 			    }  
 			});  
-
-	 
 	}
+	
 	
 	@Override
 	public void deleteUser(User user) {
 		 final String sql = "delete from users where username=:username";
-			 
 
 		 Map<String,Object> map=new HashMap<String,Object>();  
 		 map.put("username", user.getUserName());
@@ -97,8 +90,6 @@ public class UserDaoImpl implements UserDao{
 			        return ps.executeUpdate();  
 			    }  
 			});  
-
-	 
 	}
 	
 }

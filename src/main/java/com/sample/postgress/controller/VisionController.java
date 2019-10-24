@@ -58,10 +58,12 @@ public class VisionController {
 	        Path path = null;
 	       
 	        try {
+	        	
+	        	System.out.println(1/0);
 
-	          byte[] bytes = file.getBytes();
-	          path = Paths.get("src/main/resources/GoogleVision/" + file.getOriginalFilename());
-	          Files.write(path, bytes);
+	          //byte[] bytes = file.getBytes();
+	          //path = Paths.get("src/main/resources/GoogleVision/" + file.getOriginalFilename());
+	          //Files.write(path, bytes);
 			
 			
 			/*
@@ -76,8 +78,9 @@ public class VisionController {
 			 * return responseToReturn;
 			 */
 
-	        } catch (IOException e) {
+	        } catch (Exception e) {
 	            e.printStackTrace();
+	            return "The service has been disabled: Kindly contact the administrator";
 	        }
 	       
 	        return "The service has been disabled: Kindly contact the administrator";

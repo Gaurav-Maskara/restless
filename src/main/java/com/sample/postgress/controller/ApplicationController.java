@@ -4,8 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import javax.annotation.Resource;
-
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
-
 import com.consumer.beans.Quote;
 import com.sample.postgress.entity.Contact;
 import com.sample.postgress.entity.Employee;
@@ -28,6 +25,8 @@ import com.sample.postgress.service.VisitorDetailsService;
 @RestController
 @RequestMapping("/restless")
 public class ApplicationController implements Serializable {
+	
+	private static final long serialVersionUID = 14778478478L;
 
 	@Resource
 	EmployeeService employeeService;
@@ -92,8 +91,6 @@ public class ApplicationController implements Serializable {
 	public String addContact(Contact contact) {
 		System.out.println("hello");
 		contactService.insertContact(contact);
-		// return ResponseEntity.ok(new String("success"));
-		// ResponseEntity<?>
 		return "success";
 	}
 
@@ -116,7 +113,6 @@ public class ApplicationController implements Serializable {
 
 	}
 	
-
 
 	@GetMapping(value = "/employeeList")
 	public List<Employee> getEmployees() {
@@ -149,16 +145,12 @@ public class ApplicationController implements Serializable {
 	}
 	
 	
-	
-	
-	
-	
-	
-	
 	@GetMapping(value = "/java", produces = { "application/json" })
 	public ArrayList<String> javaLessons() {
 		
 		ArrayList<String> urls=new ArrayList<String>();
+		
+		// General
 		
 		urls.add("Topics Recall: "+"https://www.journaldev.com/7153/core-java-tutorial");
 		
@@ -171,13 +163,13 @@ public class ApplicationController implements Serializable {
         urls.add("Good Article on servlets must read: "+"https://stackoverflow.com/questions/3106452/how-do-servlets-work-instantiation-sessions-shared-variables-and-multithreadi/3106909#3106909"+"  "+"https://stackoverflow.com/questions/9555842/why-servlets-are-not-thread-safe/");
 		
 		
-		
+		// Hibernate
 		urls.add("Hibernate: "+"https://www.tutorialspoint.com/hibernate");
 		
 		
        
 	
-		
+		// SQL + Front end
         urls.add("SQL: "+"https://www.w3schools.com/sql/");
         urls.add("HTML: "+"https://www.w3schools.com/html/html_examples.asp");
         
@@ -216,6 +208,10 @@ public class ApplicationController implements Serializable {
     	urls.add("Internal working of hash map: "+"https://www.geeksforgeeks.org/internal-working-of-hashmap-java/");
         urls.add("Garbage Collection in Java: "+"https://www.geeksforgeeks.org/garbage-collection-java/");
     	urls.add("Concurrent Hash Map: "+"https://www.geeksforgeeks.org/concurrenthashmap-in-java/");
+    	urls.add("Can a method in sub class overloading a method in super class?: "+"https://stackoverflow.com/questions/24884151/can-a-method-in-sub-class-overloading-a-method-in-super-class");
+    	urls.add("Shallow and Deep Cloning: "+"https://dzone.com/articles/shallow-and-deep-java-cloning");
+    	urls.add("Hibernate Entity: "+"https://stackoverflow.com/questions/23214454/org-hibernate-mappingexception-unknown-entity-annotations-users");
+    	urls.add("SQL Queries: "+"https://www.google.com/search?client=firefox-b-d&sxsrf=ACYBGNSzbVF-7rOotFya60Q-t93UTSRvKw%3A1569355551878&ei=H3eKXcalNZzD3LUPh5KWuAk&q=sql+query+interview+questions&oq=sql+query+interview+questions&gs_l=psy-ab.3..0i20i263j0i7i30l4j0j0i30l4.4724.5883..6603...0.2..0.251.1240.0j2j4......0....1..gws-wiz.......0i71j35i304i39j0i13.J0hCo-DlEpQ&ved=0ahUKEwiGsciBoerkAhWcIbcAHQeJBZcQ4dUDCAo&uact=5");
     	
     	
         // Few topics to prepare

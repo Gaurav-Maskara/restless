@@ -21,7 +21,8 @@ public class UserDaoImpl implements UserDao{
 	
 	public UserDaoImpl(NamedParameterJdbcTemplate template) {  
         this.template = template;  
-}  
+    }
+	
 	NamedParameterJdbcTemplate template;  
 
 	@Override

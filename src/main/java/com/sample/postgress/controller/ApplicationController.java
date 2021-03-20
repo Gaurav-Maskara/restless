@@ -22,6 +22,7 @@ import com.sample.postgress.service.EmployeeService;
 import com.sample.postgress.service.UserService;
 import com.sample.postgress.service.VisitorDetailsService;
 
+
 @RestController
 @RequestMapping("/restless")
 public class ApplicationController implements Serializable {
@@ -212,7 +213,7 @@ public class ApplicationController implements Serializable {
     	urls.add("Shallow and Deep Cloning: "+"https://dzone.com/articles/shallow-and-deep-java-cloning");
     	urls.add("Hibernate Entity: "+"https://stackoverflow.com/questions/23214454/org-hibernate-mappingexception-unknown-entity-annotations-users");
     	urls.add("SQL Queries: "+"https://www.google.com/search?client=firefox-b-d&sxsrf=ACYBGNSzbVF-7rOotFya60Q-t93UTSRvKw%3A1569355551878&ei=H3eKXcalNZzD3LUPh5KWuAk&q=sql+query+interview+questions&oq=sql+query+interview+questions&gs_l=psy-ab.3..0i20i263j0i7i30l4j0j0i30l4.4724.5883..6603...0.2..0.251.1240.0j2j4......0....1..gws-wiz.......0i71j35i304i39j0i13.J0hCo-DlEpQ&ved=0ahUKEwiGsciBoerkAhWcIbcAHQeJBZcQ4dUDCAo&uact=5");
-    	
+    	urls.add("How does basic HTTP authentication works: "+"https://medium.com/@bitshadow/how-basic-http-authentication-and-session-works-d29af9caec31");
     	
         // Few topics to prepare
         // cycle in a linkedlist, duplicates in linked list, removing duplicates in linked list

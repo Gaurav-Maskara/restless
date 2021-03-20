@@ -22,7 +22,7 @@ public class EmployeeDaoImpl implements EmployeeDao{
 	
 	public EmployeeDaoImpl(NamedParameterJdbcTemplate template) {  
         this.template = template;  
-}  
+    }  
 	NamedParameterJdbcTemplate template;  
 
 	@Override
